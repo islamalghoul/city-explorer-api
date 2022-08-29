@@ -1,12 +1,12 @@
 const express = require('express');
 const server = express();
-const cors=require('cors')
-
+const cors=require('cors');
+require('dotenv').config();
 const Data= require('./data.json');
 server.use(cors());
 
 
-const PORT=3100
+const PORT = process.env.PORT;
 server.get('/',(req,res)=>{
 
     res.send("hello from home route")
